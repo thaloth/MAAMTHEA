@@ -6,7 +6,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 // Use the hostname you just found
 $host = 'gateway01.ap-northeast-1.prod.aws.tidbcloud.com'; 
 $user = '2GgocvPUJFzaTaZ.root';
-$pass = 'YOUR_ACTUAL_TIDB_PASSWORD'; // Make sure to put your real password here
+$pass = 'a8xfW1qj6qX6Xjru'; // Make sure to put your real password here
 $db   = 'student_attendance_db';
 $port = 4000;
 
