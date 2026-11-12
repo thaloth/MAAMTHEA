@@ -3,11 +3,11 @@ declare(strict_types=1);
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-$dbHost     = getenv('DB_HOST') ?: '://tidbcloud.com';
-$dbPort     = (int)(getenv('DB_PORT') ?: 4000);
-$dbUser     = getenv('DB_USER') ?: '2GgocvPUJFzaTaZ.root';
-$dbPassword = getenv('DB_PASSWORD') ?: 'PASTE_YOUR_TIDB_PASSWORD_HERE';
-$dbName     = getenv('DB_NAME') ?: 'student_attendance_db';
+$dbHost     = '://tidbcloud.com';
+$dbPort     = 4000;
+$dbUser     = '2GgocvPUJFzaTaZ.root';
+$dbPassword = 'YOUR_ACTUAL_TIDB_PASSWORD';
+$dbName     = 'student_attendance_db';
 
 try {
     $conn = mysqli_init();
@@ -17,5 +17,5 @@ try {
 } catch (mysqli_sql_exception $exception) {
     error_log('Database connection error: ' . $exception->getMessage());
     http_response_code(500);
-    exit('Unable to connect to the database.');
+    exit('Unable to connect to the database: ' . $exception->getMessage());
 }
